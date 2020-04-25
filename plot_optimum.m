@@ -7,8 +7,8 @@ C = C_ini + sol(1:2);
 phi = phi_ini +sol(3:4);
 
 for i =1:nn
-    [xs]=simulHopf_flor2(alpha,troncho(i)*C,phi,Tmax,omega);
-    delta_phase(i) = compute_delta_phase(xs,0.001);
+    [xs]=simulHopf_flor2(alpha,troncho(i)*C,troncho(i)*phi,Tmax,omega);
+    delta_phase(i) = compute_delta_phase(xs,0.001,1);
 end
 
 delta_phase_sim_fit = delta_phase;
